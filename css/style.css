@@ -178,7 +178,7 @@ footer.attribution {
 /* ============================================
    MOBILE — single column layout below 500px
    ============================================ */
-@media (min-width: 500px) {
+@media (max-width: 500px) {
     .product-card {
         grid-template-columns: 1fr;  /* switches from two columns to one —image stacks above text */
 }
