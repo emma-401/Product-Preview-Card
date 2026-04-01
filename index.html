@@ -19,8 +19,10 @@
     <div class="product-card">
         
         <div class="product-image">
-            <img src="./images/image-product-desktop.jpg" alt="Product image for Desktop" class="desktop-image">
-            <img src="./images/image-product-mobile.jpg" alt="Product image for Mobile" class="mobile-image">
+           <picture>
+             <source media="(min-width: 768px)" srcset="./images/image-product-desktop.jpg">
+             <img src="./images/image-product-mobile.jpg" alt="Product image" class="mobile-image">
+           </picture>
         </div>
 
         <div class="product-info">

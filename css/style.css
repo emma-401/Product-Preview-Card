@@ -27,7 +27,7 @@ body {
    ============================================ */
 .product-card {
     display: grid; /* Used in creating the two column layout */
-    grid-template-columns: 1fr 1fr; /* To equal column */
+    grid-template-columns: 1fr; /* To equal column */
     background-color: hsl(0, 0%, 100%);
     border-radius: 10px;
     max-width: 600px; /* max-width so it doesn't stretch too wide on large screens */
@@ -39,18 +39,11 @@ body {
    IMAGE COLUMN
    ============================================ */
 
-.desktop-image, .mobile-image {
+.product-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire area without distortion */
-    border-radius: 10px 0 0 10px;
-    display: block; /* removes the small gap browsers add under
-       inline images by default */
-}
-
-.mobile-image {
-    display: none; /* hidden by default — shown only on mobile
-       via the media query at the bottom */
+    height: auto; /* maintain aspect ratio */
+    display: block; /* removes small gap below image */
+    object-fit: cover; /* ensures the image covers the entire area of its container without distortion */
 }
 
 /* ============================================
@@ -176,18 +169,11 @@ footer.attribution {
     }
 
 /* ============================================
-   MOBILE — single column layout below 500px
+   DESKTOP — two-column layout from 768px onwards
+     - image and text stack vertically on smaller screens
    ============================================ */
-@media (max-width: 500px) {
+@media (min-width: 768px) {
     .product-card {
-        grid-template-columns: 1fr;  /* switches from two columns to one —image stacks above text */
-}
-
-    .desktop-image { 
-        display: none; /* hide desktop image */
-}
-    .mobile-image  { 
-        display: block; 
-        width: 100%; /* show mobile image and make it full width */
+        grid-template-columns: 1fr 1fr;  /* switches from one column (mobile) to two columns (desktop) */
 }
 }
