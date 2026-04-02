@@ -14,20 +14,19 @@ body {
     background-color: hsl(30, 38%, 92%);
     min-height: 100vh; /* not height — so if content is taller
        than the screen it can scroll instead of overflow */
-    display: flex;
+    display: flex; /* So that the card and footer turn into a flex container and the card centered */
     flex-direction: column; /* column so card and footer stack vertically */
     align-items: center; /* centers children horizontally */
     justify-content: center; /* centers children vertically */
-    padding: 2rem 1rem; /* breathing room so card doesn't touch screen edges
-       on small screens */
+    padding: 2rem 1rem; /* breathing room so card doesn't touch screen edges */
 }
 
 /* ============================================
    CARD — CSS Grid splits it into two columns
    ============================================ */
 .product-card {
-    display: grid; /* Used in creating the two column layout */
-    grid-template-columns: 1fr; /* To equal column */
+    display: grid; /* Used in creating the two column layout, how the text is centered with the image*/
+    grid-template-columns: 1fr; /* To equal column, mobile first */
     background-color: hsl(0, 0%, 100%);
     border-radius: 10px;
     max-width: 600px; /* max-width so it doesn't stretch too wide on large screens */
@@ -43,7 +42,6 @@ body {
     width: 100%;
     height: auto; /* maintain aspect ratio */
     display: block; /* removes small gap below image */
-    object-fit: cover; /* ensures the image covers the entire area of its container without distortion */
 }
 
 /* ============================================
@@ -52,7 +50,7 @@ body {
 .product-info {
     display: flex;
     flex-direction:column; /* stacks h3, h1, p, prices, button top to bottom */
-    justify-content: center; /* centers content vertically in the card */
+    
     padding: 1.75rem 1.5rem; /* breathing room around the text */
     gap: 1.25rem; /* space between all text elements */
 }
@@ -89,8 +87,7 @@ p {
    PRICES
    ============================================ */
 .price-cart {
-    display: flex;
-    align-items: center; /* aligns both prices on the same baseline */
+    display: flex; /* Turns it into a contianer and enables the p elements side side by side as its default for flex-direction is row */
     gap: 1rem;
 }
 
@@ -116,16 +113,17 @@ p {
     align-items: center;
     justify-content:center;
     gap: 8px; /* flex on the button so the icon and
-           text sit side by side, centered */
+           text sit side by side, spaced */
     background-color: hsl(158, 42%, 28%);
     color: hsl(0, 0%, 100%);
     border: none;
     border-radius: 8px;
     padding: 14px;
     width: 100%;
-    cursor: pointer;  /* changes mouse cursor to a hand on hover */
+    cursor: pointer;  /* changes mouse cursor to a hand pointer */
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9375rem;
+    font-weight: 600;
 }
 
 .cart-btn:hover {
@@ -143,7 +141,7 @@ p {
    FOOTER — pinned to bottom, no gap between lines
    ============================================ */
 footer.attribution { 
-        margin-top: auto; /* auto pushes the footer to the very bottom of the flex column on body */
+        margin-top: 10; /* spaced out the footer from the container */
         padding: 16px 0; /* breathing room above and below the text */
         text-align: center; /* center the text */
 }
@@ -156,7 +154,7 @@ footer.attribution {
     margin: 0; /* remove default margin from p, a fix from space between lines */
     line-height: 1.2;
     /* line-height gives comfortable reading space
-       between the two lines without needing margin */
+       between the two lines without needing margin between the text */
 }
 
 .attribution a { 
@@ -176,4 +174,5 @@ footer.attribution {
     .product-card {
         grid-template-columns: 1fr 1fr;  /* switches from one column (mobile) to two columns (desktop) */
 }
+
 }
