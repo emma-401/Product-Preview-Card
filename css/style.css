@@ -7,6 +7,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: hsl(158,36%, 37%);
+    --primary-font:'Montserrat', sans-serif;
+    --secondary-font: 'Fraunces', serif;
+}
+
 /* ============================================
    BODY — full height, center the card
    ============================================ */
@@ -50,7 +56,6 @@ body {
 .product-info {
     display: flex;
     flex-direction:column; /* stacks h3, h1, p, prices, button top to bottom */
-    
     padding: 1.75rem 1.5rem; /* breathing room around the text */
     gap: 1.25rem; /* space between all text elements */
 }
@@ -59,7 +64,7 @@ body {
    TYPOGRAPHY
    ============================================ */
 h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--primary-font);
     font-size: 0.75rem;
     color: hsl(228, 12%, 48%);
     letter-spacing: 5px;
@@ -68,7 +73,7 @@ h3 {
 }
 
 h1 {
-    font-family: 'Fraunces', serif;
+    font-family: var(--secondary-font);
     font-size: 2.5rem;
     color: hsl(212, 21%, 14%);
     font-weight: 700;
@@ -77,10 +82,9 @@ h1 {
 
 p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.9375rem;
     color: hsl(228, 12%, 48%);
     font-weight: 500;
-    line-height: 1.5rem; /* Adjust line height for better spacing around text */
+    line-height: 1.6rem; /* Adjust line height for better spacing around text */
 }
 
 /* ============================================
@@ -92,16 +96,17 @@ p {
 }
 
 .current-price {
-    font-family: 'Fraunces', serif;
+    font-family: var(--secondary-font);
     font-size: 2.5rem;
-    color: hsl(158, 36%, 37%);
+    color: var(--primary-color);
     font-weight: 700;
 }
 
 .old-price {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--primary-font);
     font-size: 0.9375rem;
     color: hsl(228, 12%, 48%);
+    align-content: center;
     text-decoration: line-through; /* draws a line through the text */
 }
 
@@ -114,7 +119,7 @@ p {
     justify-content:center;
     gap: 8px; /* flex on the button so the icon and
            text sit side by side, spaced */
-    background-color: hsl(158, 42%, 28%);
+    background-color: var(--primary-color);
     color: hsl(0, 0%, 100%);
     border: none;
     border-radius: 8px;
@@ -141,7 +146,7 @@ p {
    FOOTER — pinned to bottom, no gap between lines
    ============================================ */
 footer.attribution { 
-        margin-top: 10; /* spaced out the footer from the container */
+        margin-top: 10px; /* spaced out the footer from the container */
         padding: 16px 0; /* breathing room above and below the text */
         text-align: center; /* center the text */
 }
