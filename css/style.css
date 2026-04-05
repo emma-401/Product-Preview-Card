@@ -20,7 +20,7 @@ body {
     background-color: hsl(30, 38%, 92%);
     min-height: 100vh; /* not height — so if content is taller
        than the screen it can scroll instead of overflow */
-    display: flex; /* So that the card and footer turn into a flex container and the card centered */
+    display: flex; /* So that the card and footer turn into a flex container with the card centered */
     flex-direction: column; /* column so card and footer stack vertically */
     align-items: center; /* centers children horizontally */
     justify-content: center; /* centers children vertically */
@@ -32,7 +32,7 @@ body {
    ============================================ */
 .product-card {
     display: grid; /* Used in creating the two column layout, how the text is centered with the image*/
-    grid-template-columns: 1fr; /* To equal column, mobile first */
+    grid-template-columns: 1fr; /* one column, mobile first */
     background-color: hsl(0, 0%, 100%);
     border-radius: 10px;
     max-width: 600px; /* max-width so it doesn't stretch too wide on large screens */
@@ -65,7 +65,7 @@ body {
    ============================================ */
 h3 {
     font-family: var(--primary-font);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: hsl(228, 12%, 48%);
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -81,7 +81,7 @@ h1 {
 }
 
 p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--primary-font);
     color: hsl(228, 12%, 48%);
     font-weight: 500;
     line-height: 1.6rem; /* Adjust line height for better spacing around text */
@@ -91,7 +91,7 @@ p {
    PRICES
    ============================================ */
 .price-cart {
-    display: flex; /* Turns it into a contianer and enables the p elements side side by side as its default for flex-direction is row */
+    display: flex; /* Turns it into a contianer and enables the elements to be side by side as its default for flex-direction is row */
     gap: 1rem;
 }
 
@@ -123,10 +123,10 @@ p {
     color: hsl(0, 0%, 100%);
     border: none;
     border-radius: 8px;
-    padding: 14px;
+    padding: 1rem;
     width: 100%;
     cursor: pointer;  /* changes mouse cursor to a hand pointer */
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--primary-font);
     font-size: 0.9375rem;
     font-weight: 600;
 }
@@ -136,8 +136,8 @@ p {
 }
 
 .cart-btn img {
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
     /* explicitly size the cart icon so it
        doesn't inherit unexpected dimensions */
 }
@@ -147,12 +147,12 @@ p {
    ============================================ */
 footer.attribution { 
         margin-top: 10px; /* spaced out the footer from the container */
-        padding: 16px 0; /* breathing room above and below the text */
+        padding: 1rem 0; /* breathing room above and below the text */
         text-align: center; /* center the text */
 }
 
 .attribution p {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--primary-font);
     font-size: 1rem;
     color: hsl(212, 21%, 14%);
     font-weight: 500;
